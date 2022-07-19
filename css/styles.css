@@ -1,0 +1,76 @@
+body {
+    background-color: hsl(0, 100%, 74%);
+    background-image: url("../images/bg-intro-desktop.png");
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+    font-size: 3rem;
+    line-height: 1.1;
+    margin: 0;
+}
+
+#sign-up-container {
+    display: flex;
+    align-items: center;
+    margin: 150px;
+    gap: 20px;
+}
+
+.flex-item {
+    flex: 1;
+}
+
+#form-container {
+    text-align: center;
+}
+
+#pricing {
+    background-color:  hsl(248, 32%, 49%);
+    padding: 15px;
+    border-radius: 15px;
+}
+
+#pricing span {
+    font-weight: 700;
+}
+
+#card {
+    color: gray;
+    margin-top: 15px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+}
+
+#card input {
+    width: 100%;
+    display: block;
+    padding: 15px 0;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+#card button {
+    background-color: hsl(154, 59%, 51%);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    width: 100%;
+    padding: 15px 0;
+    margin-bottom: 3px;
+    border-radius: 5px;
+}
+
+#terms {
+    font-size: 0.7rem;
+}
+
+#terms a {
+    color: hsl(0, 75%, 65%);
+    font-weight: 700;
+    text-decoration: none;
+}
