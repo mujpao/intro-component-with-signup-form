@@ -133,9 +133,9 @@ h1 {
 
     #sign-up-container {
         text-align: left;
-        margin: 100px 150px 150px 150px;
+        margin: 100px auto 150px;
         gap: 20px;
-        width: auto;
+        width: 973px;
     }
 
     .flex-item {
