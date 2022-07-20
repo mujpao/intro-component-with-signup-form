@@ -22,15 +22,19 @@ for (const input of inputs) {
     const errorElement = document.querySelector(`#${input.id} + span.error`);
 
     inputElement.addEventListener("input", function() {
+        inputElement.classList.add("touched");
+
         if (inputElement.validity.valid) {
-            errorElement.textContent = '';
-            errorElement.className = 'error';
+            errorElement.textContent = "";
+            errorElement.className = "error";
         } else {
             showError(errorElement, input.errorMsg);
         }
     });
 
     form.addEventListener("submit", function(e) {
+        inputElement.classList.add("touched");
+
         if (!inputElement.validity.valid) {
             showError(errorElement, input.errorMsg);
             e.preventDefault();
