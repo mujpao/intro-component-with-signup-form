@@ -13,18 +13,26 @@ body {
     align-items: center;
 }
 
-#overview h1 {
+button, input {
+    font-family: inherit;
+}
+
+/* Overview Section */
+
+.overview h1 {
     font-size: 2rem;
     line-height: 1.2;
     margin-bottom: 30px;
 }
 
-#overview p {
+.overview p {
     font-size: 1.05rem;
     line-height: 1.6;
 }
 
-#sign-up-container {
+/* Sign-up Container Section */
+
+.sign-up-container {
     text-align: center;
     display: flex;
     flex-wrap: wrap;
@@ -38,24 +46,28 @@ body {
     width: 100%;
 }
 
-#form-container {
+.form-container {
     display: flex;
     flex-direction: column;
     gap: 25px;
 }
 
-#pricing {
+/* Pricing Section */
+
+.pricing {
     background-color: hsl(248, 32%, 49%);
     padding: 20px 50px;
     border-radius: 10px;
     box-shadow: 0px 5px 5px hsla(0deg 38% 51% / 80%);
 }
 
-#pricing span {
+.pricing span {
     font-weight: 700;
 }
 
-#card {
+/* Sign-up Card Section */
+
+.card {
     color: gray;
     background-color: white;
     padding: 20px;
@@ -63,7 +75,7 @@ body {
     box-shadow: 0px 5px 5px hsla(0deg 38% 51% / 80%);
 }
 
-#card input {
+.card input {
     width: 100%;
     display: block;
     padding: 14px 0 14px 25px;
@@ -74,17 +86,16 @@ body {
     border-width: 1px;
     box-sizing: border-box;
     font-size: 0.9rem;
-    font-family: 'Poppins', sans-serif;
     font-weight: 600;
 }
 
-#card input:focus {
+.card input:focus {
     outline-color: hsl(249, 10%, 26%);
     outline-width: 1px;
     outline-style: solid;
 }
 
-#card input.touched:invalid {
+.card input.touched:invalid {
     border-color: hsl(0, 100%, 74%);
     outline-color: hsl(0, 100%, 74%);
     background-image: url("../images/icon-error.svg");
@@ -104,10 +115,9 @@ body {
     padding-bottom: 5px;
 }
 
-#card button {
+.card button {
     background-color: hsl(154, 59%, 51%);
     color: white;
-    font-family: 'Poppins', sans-serif;
     font-size: 1rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -119,33 +129,33 @@ body {
     box-shadow: 0px 3px 3px rgb(105 105 105 / 80%);
 }
 
-#card button:hover {
+.card button:hover {
     background-color: hsl(154, 56%, 68%);
     cursor: pointer;
 }
 
-#terms {
+.terms {
     font-size: 0.7rem;
     line-height: 1.7;
 }
 
-#terms p {
+.terms p {
     margin-bottom: 0;
 }
 
-#terms a {
+.terms a {
     color: hsl(0, 75%, 65%);
     font-weight: 700;
     text-decoration: none;
 }
 
-@media (min-width: 1000px) {
+/* @media (min-width: 1000px) {
     h1 {
         font-size: 3rem;
         margin: 0;
     }
 
-    #sign-up-container {
+    .sign-up-container {
         text-align: left;
         margin: 100px auto 150px;
         gap: 20px;
@@ -156,11 +166,11 @@ body {
         flex: 1;
     }
 
-    #pricing {
+    .pricing {
         padding: 15px;
     }
 
-    #card {
+    .card {
         padding: 30px;
     }
-}
+} */
