@@ -42,28 +42,39 @@
       <div class="pricing"><span>Try it free 7 days</span> then $20/mo. thereafter</div>
 
       <div class="card">
-        <form novalidate>
-          <!-- <label for="firstname">First Name</label> -->
-          <input type="text" name="firstname" id="firstname" placeholder="First Name" required>
-          <span class="error" aria-live="polite"></span>
+        <form class="sign-up-form" novalidate>
 
-          <!-- <label for="lastname">Last Name</label> -->
-          <input type="text" name="lastname" id="lastname" placeholder="Last Name" required>
-          <span class="error" aria-live="polite"></span>
+          <div class="form-item">
+            <!-- <label for="firstname">First Name</label> -->
+            <input type="text" name="firstname" id="firstname" placeholder="First Name" required>
+            <span class="error" aria-live="polite"></span>
+          </div>
 
-          <!-- <label for="emailaddr">Email Address</label> -->
-          <input type="email" name="emailaddr" id="emailaddr" placeholder="Email Address" required>
-          <span class="error" aria-live="polite"></span>
+          <div class="form-item">
+            <!-- <label for="lastname">Last Name</label> -->
+            <input type="text" name="lastname" id="lastname" placeholder="Last Name" required>
+            <span class="error" aria-live="polite"></span>
+          </div>
 
-          <!-- <label for="password">Password</label> -->
-          <input type="password" name="password" id="password" placeholder="Password" required>
-          <span class="error" aria-live="polite"></span>
+          <div class="form-item">
+            <!-- <label for="emailaddr">Email Address</label> -->
+            <input type="email" name="emailaddr" id="emailaddr" placeholder="Email Address" required>
+            <span class="error" aria-live="polite"></span>
+          </div>
+
+          <div class="form-item">
+            <!-- <label for="password">Password</label> -->
+            <input type="password" name="password" id="password" placeholder="Password" required>
+            <span class="error" aria-live="polite"></span>
+          </div>
 
           <button type="submit">Claim your free trial</button>
+
+          <div class="terms">
+            <p>By clicking the button, you are agreeing to our <a href="#">Terms and Services</a></p>
+          </div>
+
         </form>
-        <div class="terms">
-          <p>By clicking the button, you are agreeing to our <a href="#">Terms and Services</a></p>
-        </div>
       </div>
 
     </div>
