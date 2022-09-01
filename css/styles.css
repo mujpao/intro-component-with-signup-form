@@ -39,12 +39,14 @@ body {
 }
 
 #form-container {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
 }
 
 #pricing {
     background-color: hsl(248, 32%, 49%);
-    padding: 15px 100px;
+    padding: 20px 50px;
     border-radius: 10px;
     box-shadow: 0px 5px 5px hsla(0deg 38% 51% / 80%);
 }
@@ -55,7 +57,6 @@ body {
 
 #card {
     color: gray;
-    margin-top: 15px;
     background-color: white;
     padding: 20px;
     border-radius: 10px;
