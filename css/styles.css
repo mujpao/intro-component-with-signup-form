@@ -1,13 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     background-color: hsl(0, 100%, 74%);
     background-image: url("../images/bg-intro-desktop.png");
     color: white;
     font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-h1 {
+#overview h1 {
     font-size: 2rem;
-    line-height: 1.1;
+    line-height: 1.2;
+    margin-bottom: 30px;
+}
+
+#overview p {
+    font-size: 1.05rem;
+    line-height: 1.6;
 }
 
 #sign-up-container {
@@ -15,9 +29,9 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    margin: 75px auto 50px;
-    gap: 50px;
-    width: 429px;
+    margin: 100px 15px 50px;
+    gap: 60px;
+    max-width: 330px;
 }
 
 .flex-item {
