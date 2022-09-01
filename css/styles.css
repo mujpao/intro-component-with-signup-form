@@ -1,10 +1,23 @@
+:root {
+    --main-background-color: hsl(0, 100%, 74%);
+    --dark-background-color: hsl(248, 32%, 49%);
+    --button-color: hsl(154, 59%, 51%);
+    --button-hover-color: hsl(154, 56%, 68%);
+    --button-shadow-color: rgb(105 105 105 / 80%);
+    --input-border-color: hsl(246, 25%, 77%);
+    --input-outline-color: hsl(249, 10%, 26%);
+    --error-color: hsl(0, 62%, 53%);
+    --card-shadow-color: rgba(143, 66, 66, 0.8);
+    --link-color: hsl(0, 75%, 65%);
+}
+
 * {
     margin: 0;
     padding: 0;
 }
 
 body {
-    background-color: hsl(0, 100%, 74%);
+    background-color: var(--main-background-color);
     background-image: url("../images/bg-intro-mobile.png");
     color: white;
     font-family: 'Poppins', sans-serif;
@@ -50,13 +63,17 @@ input {
     gap: 25px;
 }
 
+.pricing,
+.card {
+    box-shadow: 0px 7px 2px var(--card-shadow-color);
+}
+
 /* Pricing Section */
 
 .pricing {
-    background-color: hsl(248, 32%, 49%);
+    background-color: var(--dark-background-color);
     padding: 20px 50px;
     border-radius: 10px;
-    box-shadow: 0px 5px 5px hsla(0deg 38% 51% / 80%);
 }
 
 .pricing span {
@@ -70,7 +87,6 @@ input {
     background-color: white;
     padding: 25px;
     border-radius: 10px;
-    box-shadow: 0px 5px 5px hsla(0deg 38% 51% / 80%);
 }
 
 /* Sign-up Form */
@@ -85,7 +101,7 @@ input {
     box-sizing: border-box;
     width: 100%;
     padding: 14px 0 14px 25px;
-    border-color: hsl(246, 25%, 77%);
+    border-color: var(--input-border-color);
     border-radius: 5px;
     border-style: solid;
     border-width: 1px;
@@ -94,18 +110,19 @@ input {
 }
 
 .form-item input:focus {
-    outline-color: hsl(249, 10%, 26%);
+    outline-color: var(--input-outline-color);
     outline-width: 1px;
     outline-style: solid;
 }
 
 .form-item input.touched:invalid {
-    border-color: hsl(0, 100%, 74%);
-    outline-color: hsl(0, 100%, 74%);
+    border-color: var(--error-color);
+    outline-color: var(--error-color);
     background-image: url("../images/icon-error.svg");
     background-repeat: no-repeat;
     background-position: bottom 50% right 25px;
-    color: red;
+    color: var(--error-color);
+    ;
 }
 
 .form-item .error {
@@ -113,12 +130,12 @@ input {
     font-style: italic;
     text-align: right;
     font-size: 0.7rem;
-    color: red;
+    color: var(--error-color);
     padding: 5px 0;
 }
 
 .sign-up-form button {
-    background-color: hsl(154, 59%, 51%);
+    background-color: var(--button-color);
     color: white;
     font-size: 1rem;
     font-weight: 600;
@@ -127,11 +144,11 @@ input {
     margin-bottom: 3px;
     border-radius: 5px;
     border-style: none;
-    box-shadow: 0px 3px 3px rgb(105 105 105 / 80%);
+    box-shadow: 0px 3px 3px var(--button-shadow-color);
 }
 
 .sign-up-form button:hover {
-    background-color: hsl(154, 56%, 68%);
+    background-color: var(--button-hover-color);
     cursor: pointer;
 }
 
@@ -142,7 +159,7 @@ input {
 }
 
 .terms a {
-    color: hsl(0, 75%, 65%);
+    color: var(--link-color);
     font-weight: 700;
     text-decoration: none;
 }
