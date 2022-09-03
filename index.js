@@ -21,7 +21,7 @@ for (const input of inputs) {
     const inputElement = document.getElementById(input.id);
     const errorElement = document.querySelector(`#${input.id} + span.error`);
 
-    inputElement.addEventListener("input", function() {
+    inputElement.addEventListener("input", function () {
         inputElement.classList.add("touched");
 
         if (inputElement.validity.valid) {
@@ -32,7 +32,7 @@ for (const input of inputs) {
         }
     });
 
-    form.addEventListener("submit", function(e) {
+    form.addEventListener("submit", function (e) {
         inputElement.classList.add("touched");
 
         if (!inputElement.validity.valid) {
