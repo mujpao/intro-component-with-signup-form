@@ -5,13 +5,10 @@ function InputData(id, errorMsg) {
 
 function showError(errorElement, errorMsg) {
     errorElement.textContent = errorMsg;
-    // TODO is active class needed?
-    errorElement.className = "error active";
 }
 
 function hideError(errorElement) {
     errorElement.textContent = "";
-    errorElement.className = "error";
 }
 
 const inputs = [
