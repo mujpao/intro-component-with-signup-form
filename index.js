@@ -21,25 +21,28 @@ const inputs = [
 const form = document.getElementsByTagName("form")[0];
 
 for (const input of inputs) {
-    const inputElement = document.getElementById(input.id);
-    const errorElement = document.querySelector(`#${input.id} + span.error`);
+    input.inputElement = document.getElementById(input.id);
+    input.errorElement = document.querySelector(`#${input.id} + span.error`);
 
-    inputElement.addEventListener("input", function () {
-        inputElement.classList.add("touched");
+    input.inputElement.addEventListener("input", function () {
+        input.inputElement.classList.add("touched");
 
-        if (inputElement.validity.valid) {
-            hideError(errorElement);
+        if (input.inputElement.validity.valid) {
+            hideError(input.errorElement);
         } else {
-            showError(errorElement, input.errorMsg);
+            showError(input.errorElement, input.errorMsg);
         }
     });
 
-    form.addEventListener("submit", function (e) {
-        inputElement.classList.add("touched");
+}
 
-        if (!inputElement.validity.valid) {
-            showError(errorElement, input.errorMsg);
+form.addEventListener("submit", function (e) {
+    for (const input of inputs) {
+        input.inputElement.classList.add("touched");
+
+        if (!input.inputElement.validity.valid) {
+            showError(input.errorElement, input.errorMsg);
             e.preventDefault();
         }
-    });
-}
+    }
+});
