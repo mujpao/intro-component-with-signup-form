@@ -11,10 +11,14 @@ const inputWithErrorMsgProto = {
 
     showError() {
         this.errorElement.textContent = this.errorMsg;
+        this.inputElement.setAttribute("aria-invalid", "true");
+        this.inputElement.setAttribute("aria-errormessage", this.errorID);
     },
 
     hideError() {
         this.errorElement.textContent = "";
+        this.inputElement.setAttribute("aria-invalid", "false");
+        this.inputElement.removeAttribute("aria-errormessage");
     },
 
     addListeners() {
@@ -34,8 +38,12 @@ function inputWithErrorMsg(id, errorMsg) {
     const inputElement = document.getElementById(id);
     const errorElement = document.querySelector(`#${id} + span.error`);
 
+    const errorID = `${id}-error`;
+
+    errorElement.id = errorID;
+
     return Object.assign(Object.create(inputWithErrorMsgProto),
-        { id, errorMsg, inputElement, errorElement });
+        { id, errorMsg, inputElement, errorElement, errorID });
 }
 
 const inputs = [
