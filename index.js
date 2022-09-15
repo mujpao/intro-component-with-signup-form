@@ -1,47 +1,62 @@
-function InputData(id, errorMsg) {
-    this.id = id;
-    this.errorMsg = errorMsg;
-}
+"use strict";
 
-function showError(errorElement, errorMsg) {
-    errorElement.textContent = errorMsg;
-}
+const inputWithErrorMsgProto = {
+    isValid() {
+        return this.inputElement.validity.valid;
+    },
 
-function hideError(errorElement) {
-    errorElement.textContent = "";
+    markTouched() {
+        this.inputElement.classList.add("touched");
+    },
+
+    showError() {
+        this.errorElement.textContent = this.errorMsg;
+    },
+
+    hideError() {
+        this.errorElement.textContent = "";
+    },
+
+    addListeners() {
+        this.inputElement.addEventListener("input", () => {
+            this.markTouched();
+
+            if (this.isValid()) {
+                this.hideError();
+            } else {
+                this.showError();
+            }
+        });
+    },
+};
+
+function inputWithErrorMsg(id, errorMsg) {
+    const inputElement = document.getElementById(id);
+    const errorElement = document.querySelector(`#${id} + span.error`);
+
+    return Object.assign(Object.create(inputWithErrorMsgProto),
+        { id, errorMsg, inputElement, errorElement });
 }
 
 const inputs = [
-    new InputData("firstname", "First Name cannot be empty"),
-    new InputData("lastname", "Last Name cannot be empty"),
-    new InputData("emailaddr", "Looks like this is not an email"),
-    new InputData("password", "Password cannot be empty"),
+    inputWithErrorMsg("firstname", "First Name cannot be empty"),
+    inputWithErrorMsg("lastname", "Last Name cannot be empty"),
+    inputWithErrorMsg("emailaddr", "Looks like this is not an email"),
+    inputWithErrorMsg("password", "Password cannot be empty"),
 ];
+
+for (const input of inputs) {
+    input.addListeners();
+}
 
 const form = document.getElementsByTagName("form")[0];
 
-for (const input of inputs) {
-    input.inputElement = document.getElementById(input.id);
-    input.errorElement = document.querySelector(`#${input.id} + span.error`);
-
-    input.inputElement.addEventListener("input", function () {
-        input.inputElement.classList.add("touched");
-
-        if (input.inputElement.validity.valid) {
-            hideError(input.errorElement);
-        } else {
-            showError(input.errorElement, input.errorMsg);
-        }
-    });
-
-}
-
 form.addEventListener("submit", function (e) {
     for (const input of inputs) {
-        input.inputElement.classList.add("touched");
+        input.markTouched();
 
-        if (!input.inputElement.validity.valid) {
-            showError(input.errorElement, input.errorMsg);
+        if (!input.isValid()) {
+            input.showError();
             e.preventDefault();
         }
     }
