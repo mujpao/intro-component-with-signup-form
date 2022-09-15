@@ -5,7 +5,12 @@ function InputData(id, errorMsg) {
 
 function showError(errorElement, errorMsg) {
     errorElement.textContent = errorMsg;
-    errorElement.className = 'error active';
+    errorElement.className = "error active";
+}
+
+function hideError(errorElement) {
+    errorElement.textContent = "";
+    errorElement.className = "error";
 }
 
 const inputs = [
@@ -25,8 +30,7 @@ for (const input of inputs) {
         inputElement.classList.add("touched");
 
         if (inputElement.validity.valid) {
-            errorElement.textContent = "";
-            errorElement.className = "error";
+            hideError(errorElement);
         } else {
             showError(errorElement, input.errorMsg);
         }
