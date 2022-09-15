@@ -122,7 +122,6 @@ input {
     background-repeat: no-repeat;
     background-position: bottom 50% right 25px;
     color: var(--error-color);
-    ;
 }
 
 .form-item .error {
