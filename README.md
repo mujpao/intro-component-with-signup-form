@@ -40,7 +40,7 @@ Mobile:
 ### Links
 
 - Solution URL: [GitHub repo](https://github.com/mujpao/intro-component-with-signup-form)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [GitHub Pages](https://mujpao.github.io/intro-component-with-signup-form/)
 
 ## My process
 
