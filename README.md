@@ -67,6 +67,7 @@ I want to continue learning about JavaScript and how best to organize code. I al
 
 - [MDN article about form validation](https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation) - This article helped me implement the custom error messages.
 - [MDN article about aria-errormessage](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-errormessage) - Another helpful MDN article.
+- [Article about hiding things using CSS.](https://www.scottohara.me/blog/2017/04/14/inclusively-hidden.html) - This was useful for implementing the labels.
 - [Article about prototypal inheritance in JS](https://medium.com/javascript-scene/3-different-kinds-of-prototypal-inheritance-es6-edition-32d777fa16c9) - Contains a useful example of a factory function.
 - [Article suggesting not to use placeholders](https://www.smashingmagazine.com/2018/06/placeholder-attribute/) - Article about how using placeholders and similar designs can result in some issues.
 - [The Odin Project](https://www.theodinproject.com/) - This is a useful resource for learning about full-stack development.
