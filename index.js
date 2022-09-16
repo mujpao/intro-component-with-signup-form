@@ -30,6 +30,12 @@ const inputWithErrorMsgProto = {
             } else {
                 this.showError();
             }
+
+            if (this.inputElement.value === "") {
+                this.labelElement.classList.remove("visually-hidden");
+            } else {
+                this.labelElement.classList.add("visually-hidden");
+            }
         });
     },
 };
@@ -37,13 +43,14 @@ const inputWithErrorMsgProto = {
 function inputWithErrorMsg(id, errorMsg) {
     const inputElement = document.getElementById(id);
     const errorElement = document.querySelector(`#${id} + span.error`);
+    const labelElement = document.querySelector(`label[for=${id}]`);
 
     const errorID = `${id}-error`;
 
     errorElement.id = errorID;
 
     return Object.assign(Object.create(inputWithErrorMsgProto),
-        { id, errorMsg, inputElement, errorElement, errorID });
+        { id, errorMsg, inputElement, errorElement, labelElement, errorID });
 }
 
 const inputs = [
