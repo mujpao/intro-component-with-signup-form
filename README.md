@@ -55,15 +55,20 @@ Through this project, I learned how to add custom form validation using JavaScri
 
 I used the `novalidate` attribute on the `<form>` element to prevent the built-in HTML form validation and used the constraint validation API to check the validity of each input element when the element's value is modified or if the user tries to submit the form. If the element doesn't pass the validity check, then an error message is displayed, and the form is not submitted.
 
-To display the prompt for each input, I used the HTML placeholder attribute to make it look like the example images. However, it looks like using the placeholder attribute instead of the `<label>` element can result in [some issues](https://www.smashingmagazine.com/2018/06/placeholder-attribute/), so I probably wouldn't use this approach in a real project.
+Using the technique suggested by [this article](https://www.scottohara.me/blog/2017/04/14/inclusively-hidden.html), I hid the label whenever the form input is not empty, while still allowing the label to be read by screen readers.
+
+To ensure that the error message is read whenever an invalid input is focused, I set `aria-invalid="true"` on the input element and set `aria-errormessage` to link to the `id` of the corresponding error element.
 
 ### Continued development
 
-I want to continue learning about JavaScript and how best to organize code.
+I want to continue learning about JavaScript and how best to organize code. I also want to learn more about accessibility.
 
 ### Useful resources
 
 - [MDN article about form validation](https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation) - This article helped me implement the custom error messages.
+- [MDN article about aria-errormessage](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-errormessage) - Another helpful MDN article.
+- [Article about prototypal inheritance in JS](https://medium.com/javascript-scene/3-different-kinds-of-prototypal-inheritance-es6-edition-32d777fa16c9) - Contains a useful example of a factory function.
+- [Article suggesting not to use placeholders](https://www.smashingmagazine.com/2018/06/placeholder-attribute/) - Article about how using placeholders and similar designs can result in some issues.
 - [The Odin Project](https://www.theodinproject.com/) - This is a useful resource for learning about full-stack development.
 
 ## Author
