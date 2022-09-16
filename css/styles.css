@@ -107,6 +107,8 @@ input {
     font-weight: 600;
     left: 20px;
     top: 14px;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 label.visually-hidden {

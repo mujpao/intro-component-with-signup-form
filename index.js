@@ -45,6 +45,12 @@ function inputWithErrorMsg(id, errorMsg) {
     const errorElement = document.querySelector(`#${id} + span.error`);
     const labelElement = document.querySelector(`label[for=${id}]`);
 
+    if (inputElement.value === "") {
+        labelElement.classList.remove("visually-hidden");
+    } else {
+        labelElement.classList.add("visually-hidden");
+    }
+
     const errorID = `${id}-error`;
 
     errorElement.id = errorID;
