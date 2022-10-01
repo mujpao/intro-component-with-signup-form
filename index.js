@@ -58,11 +58,29 @@ class InputWithErrorMsg {
     }
 }
 
+class PasswordInputWithErrorMsg extends InputWithErrorMsg {
+    constructor(id, errorMsg) {
+        super(id, errorMsg);
+    }
+
+    showError() {
+        super.showError();
+
+        this.inputElement.setAttribute("aria-describedby", this.errorElement.id);
+    }
+
+    hideError() {
+        super.hideError();
+
+        this.inputElement.removeAttribute("aria-describedby");
+    }
+}
+
 const inputs = [
-   new InputWithErrorMsg("firstname", "First Name cannot be empty"),
-   new InputWithErrorMsg("lastname", "Last Name cannot be empty"),
-   new InputWithErrorMsg("emailaddr", "Looks like this is not an email"),
-   new InputWithErrorMsg("password", "Password cannot be empty"),
+    new InputWithErrorMsg("firstname", "First Name cannot be empty"),
+    new InputWithErrorMsg("lastname", "Last Name cannot be empty"),
+    new InputWithErrorMsg("emailaddr", "Looks like this is not an email"),
+    new PasswordInputWithErrorMsg("password", "Password cannot be empty"),
 ];
 
 for (const input of inputs) {
